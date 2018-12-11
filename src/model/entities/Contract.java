@@ -6,14 +6,11 @@ import java.util.List;
 
 public class Contract {
 
-	private Integer number;
-	private Date date;
-	private Double totalValue;
+	private Integer number; // Número do contrato
+	private Date date; // Data de adesão do contrato
+	private Double totalValue; // Valor total do contrato
 
-	private List<Installment> list = new ArrayList<>();
-
-	public Contract() {
-	}
+	private List<Installment> installments = new ArrayList<>();
 
 	public Contract(Integer number, Date date, Double totalValue) {
 		this.number = number;
@@ -43,6 +40,18 @@ public class Contract {
 
 	public void setTotalValue(Double totalValue) {
 		this.totalValue = totalValue;
+	}
+
+	public List<Installment> getInstallments() {
+		return installments;
+	}
+
+	public void addInstallment(Installment installment) {
+		installments.add(installment);
+	}
+
+	public void removeInstallment(Installment installment) {
+		installments.remove(installment);
 	}
 
 }
